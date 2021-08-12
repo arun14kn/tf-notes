@@ -1,0 +1,51 @@
+az network nsg show -g demo08 -n nsg01
+terraform import azurerm_network_security_group.nsg "/subscriptions/8ac11946-e37d-4be3-87d4-0cc5f72fd437/resourceGroups/demo08/providers/Microsoft.Network/networkSecurityGroups/nsg01"
+
+
+az network vnet show -g demo08 -n vnet-dco-ne-01
+terraform import azurerm_virtual_network.vnet "Resource ID"
+terraform import azurerm_virtual_network.vnet "/subscriptions/8ac11946-e37d-4be3-87d4-0cc5f72fd437/resourceGroups/demo08/providers/Microsoft.Network/virtualNetworks/vnet-dco-ne-01"
+
+
+az group list
+terraform import azurerm_resource_group.rg  "Resource ID"
+terraform import azurerm_resource_group.rg "/subscriptions/8ac11946-e37d-4be3-87d4-0cc5f72fd437/resourceGroups/demo08"
+
+============================================
+
+sudo cp -r /home/ubuntu/demo09/modules/ .
+
+du -sh
+
+git init
+
+git add .
+
+git status
+
+git commit -m "first commit"
+
+git remote add origin https://github.com/arun14kn/terraform-conditional-ifelse.git
+
+git branch -M main
+
+git push -u origin main
+
+arun14kn
+<git_password>
+
+=============================================
+
+//git staging dir/files deletion after push
+git reset --soft HEAD
+git rm --cached main.tf
+git status
+git reset HEAD main.tf
+git status
+ls
+tree
+rm -rf main.tf
+rm -rf modules/
+ls -l
+tree
+
